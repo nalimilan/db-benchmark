@@ -23,9 +23,9 @@ DT = data.table(
   id4 = sample(K, N, TRUE),                          # large groups (int)
   id5 = sample(K, N, TRUE),                          # large groups (int)
   id6 = sample(N/K, N, TRUE),                        # small groups (int)
-  v1 =  sample(5, N, TRUE),                          # int in range [1,5]
-  v2 =  sample(5, N, TRUE),                          # int in range [1,5]
-  v3 =  sample(round(runif(100,max=100),4), N, TRUE) # numeric e.g. 23.5749
+  v1 =  sample(N/100L, N, TRUE),                     # int in range [1,N/100]
+  v2 =  sample(N/10L, N, TRUE),                      # int in range [1,N/10]
+  v3 =  round(runif(N,max=100),4)                    # numeric e.g. 23.5749
 )
 if (nas>0L) {
   real_nas = nas/100
